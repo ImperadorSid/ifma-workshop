@@ -1,0 +1,17 @@
+<div class="hstack justify-content-between">
+  <h1>Person#index</h1>
+
+  <%= link_to 'New person', new_person_path, class: 'btn btn-primary' %>
+</div>
+
+<ul class="list-group">
+  <% @people.each do |person| %>
+    <%= link_to person_path(person) do %>
+      <li class="list-group-item">
+        <p class="fw-semibold"><%= person.name %></p>
+        <p><%= person.age %></p>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
+
